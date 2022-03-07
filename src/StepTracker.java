@@ -24,7 +24,9 @@ public class StepTracker {
         System.out.println("Среднее количество шагов: " + getAverageOfSteps( months) );
         System.out.println("Пройденная дистанция (в км): " + converter.getStepLength(step));
         System.out.println("Количество сожжённых килокалорий: " + converter.getKkalInKal( step));
-        System.out.println("Лучшая серия: максимальное количество подряд идущих" + "\n" +  "дней, когда количество шагов было выше целевого:  " + getBestSeries( months) );
+        System.out.println("Лучшая серия: максимальное количество подряд идущих дней, когда количество шагов было " +
+                        "\n" + "выше целевого: " + getBestSeries(months) );
+
     }
 
     int getMaxSteps(int months){ //Поиск максимального пройденного количества шагов в месяце
