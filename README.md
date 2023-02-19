@@ -18,16 +18,21 @@
 Программа написана на Java. Пример кода:
 
 ```java
-import java.util.Scanner;
+import java.util.HashMap;
 
-public class Main {
-    public static void main(String[] args) {
+public class StepTracker {
 
-        Scanner scanner = new Scanner(System.in);
-        StepTracker stepTracker = new StepTracker();
+    HashMap<Integer,int[]> monthToData = new HashMap<>();
+    int goal = 10000;
+    Converter converter = new Converter(0.00075,50,1000);
 
-        while (true) {
-            printMenu();
-            int command = scanner.nextInt();
+    void saveSteps(int months,int day,int step){ //Сохранение количества шагов
+        int[] month = monthToData.get(months);
+        if(month == null){
+            month = new int[30];
+            monthToData.put(months,month);
+        }
+        month[day-1]=step;
+    }
 ```
 
